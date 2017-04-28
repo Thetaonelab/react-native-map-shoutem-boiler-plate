@@ -10,7 +10,7 @@ This is a quick starter for react native with useful libraries. It includes temp
 
 The starter is mainly tested on Android, but it should work fine on ios also (please raise an  issue if you find any problem on ios).
 
-# Installation
+## Installation
 
 The pre requisite to make this template useful is setting up android / ios sdk with corresponding tools. You can use android-studio with sdk-manager to download required build tools.
 
@@ -20,11 +20,10 @@ npm install -g react-native-cli
 `
 
 After that follow the steps below:
-`
+```
 git clone https://tamalsen@codelab.eyezon.in/experimental/react-native-map-shoutem-boiler-plate.git
-
 yarn install
-`
+```
 
 Now your application is ready with required libraries. 
 In order to use react-native-maps you have to add a valid google map API key in your AndroidManifest.xml file (location: [project-root]/android/app/src/). You should already see the following line in that file. 
@@ -52,7 +51,8 @@ After the build is finished, run the following command to setup dev server.
 react-native start
 `
 
-
+![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-22-01-323_com.fanlikeyou.png)
+![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-23-34-359_com.fanlikeyou.png)
 
 
 
