@@ -3,7 +3,7 @@ This is a quick starter for react native with useful libraries. It includes temp
 - Airbnb react-native-map
 - react-native-router-flux
 - react-redux
-- rdux-thung
+- rdux-thunk
 - shoutem-ui toolkit
 - vector icons
 
@@ -52,6 +52,7 @@ react-native start
 `
 
 ![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-22-01-323_com.fanlikeyou.png)
+![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-45-07-450_com.fanlikeyou.png)
 ![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-23-34-359_com.fanlikeyou.png)
 
 
