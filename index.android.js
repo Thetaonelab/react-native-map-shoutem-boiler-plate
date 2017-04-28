@@ -15,26 +15,33 @@ import {
   ToolbarAndroid
 } from 'react-native';
 import { Actions, Scene, Router } from 'react-native-router-flux';
-import MapGoogle from './screens/MapGoogle'
-import Login from './screens/Login'
-import Restaurants from './screens/Restaurants'
+import MapGoogle from './src/js/screens/MapGoogle'
+import Login from './src/js/screens/Login'
+import Restaurants from './src/js/screens/Restaurants'
+import { Provider } from 'react-redux';
+import store from './src/js/reduxStore';
 
 const scenes = Actions.create(
   <Scene key="root">
     <Scene key="login" component={Login} hideNavBar={true} />
-    <Scene key="mapGoogle" component={MapGoogle} title="MapGoogle" hideNavBar={true}/>
-    <Scene key="restaurants" component={Restaurants} title="Restaurants" hideNavBar={true}/>
+    <Scene key="mapGoogle" component={MapGoogle} title="MapGoogle" hideNavBar={true} />
+    <Scene key="restaurants" component={Restaurants} title="Restaurants" hideNavBar={true} />
   </Scene>
 );
 
-
-export default class FanLikeYou extends Component {
+class FanLikeYou extends Component {
   render() {
-    return <Router scenes={scenes} />
+    return (
+     
+        <Provider store={store}>
+          <Router scenes={scenes} />
+        </Provider>
+         
+    )
   }
 }
 
-
-
-
-AppRegistry.registerComponent('FanLikeYou', () => FanLikeYou);
+const App =() => (
+    <FanLikeYou />
+)
+AppRegistry.registerComponent('FanLikeYou', () => App);

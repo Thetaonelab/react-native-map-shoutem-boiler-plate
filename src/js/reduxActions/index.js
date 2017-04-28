@@ -1,0 +1,9 @@
+
+// Restaurant
+export const RESTAURANT_DATA_LOADING = 'RESTAURANT_DATA_LOADING';
+export const RESTAURANT_DATA_ARRIVED = 'RESTAURANT_DATA_ARRIVED';
+
+
+//Session
+
+export const INITIALIZE = 'INITIALIZE';

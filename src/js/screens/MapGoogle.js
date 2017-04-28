@@ -120,9 +120,9 @@ class MapGoogle extends Component {
                     <ToolbarAndroid
                         title="AwesomeApp"
                         style={styles.toolbar}
-                        actions={[{ title: 'Settings', icon: require('../img/settings.png'), show: 'always' }]}
+                        actions={[{ title: 'Settings', icon: require('../../../img/settings.png'), show: 'always' }]}
                         titleColor='white'
-                        navIcon={require('../img/menu.png')}
+                        navIcon={require('../../../img/menu.png')}
                         onIconClicked={this._openDrawer}
                         onActionSelected = {this._onActionSelected}>
                     </ToolbarAndroid>
