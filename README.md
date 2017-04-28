@@ -6,6 +6,7 @@ This is a quick starter for react native with useful libraries. It includes temp
 - rdux-thunk
 - shoutem-ui toolkit
 - vector icons
+- node/express api server
 
 
 The starter is mainly tested on Android, but it should work fine on ios also (please raise an  issue if you find any problem on ios).
