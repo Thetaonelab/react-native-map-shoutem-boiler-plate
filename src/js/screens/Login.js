@@ -15,7 +15,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button } from '@shoutem/ui';
 import { Actions, Scene, Router } from 'react-native-router-flux';
-
+import FacebookLoginButton from '../components/FacebookLoginButton'
 
 const styles = StyleSheet.create({
 
@@ -37,11 +37,13 @@ const styles = StyleSheet.create({
 class Login extends Component {
     constructor(props){
         super(props)
-        this._handleOnPress = this._handleOnPress.bind(this)
     }
-    _handleOnPress() {
+
+    _onfacebookLoginSuccess(email,birthday,profilePic){
+        console.log('Success fetching data: ' , email,birthday,profilePic);
         Actions.mapGoogle()
     }
+
     render() {
         return (
             <View style={styles.parentContainer}>
@@ -53,14 +55,7 @@ class Login extends Component {
                     Find a fan friend near you.
                 </Text>
 
-                <Button style={{
-                    marginTop: 100,
-                    backgroundColor: "#3b5998",
-                    padding: 12,
-                }} onPress={this._handleOnPress}>
-                    <Icon name="facebook" size={25} color='white' />
-                    <Text style={{ color: 'white', fontSize: 18, marginLeft: 7 }}>Login with facebook</Text>
-                </Button>
+                <FacebookLoginButton onReceiveData={this._onfacebookLoginSuccess} onFailure={console.log}/>
             </View>
         );
     }
