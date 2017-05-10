@@ -22,7 +22,7 @@ npm install -g react-native-cli
 
 After that follow the steps below:
 ```
-git clone https://tamalsen@codelab.eyezon.in/experimental/react-native-map-shoutem-boiler-plate.git
+git clone https://github.com/Eyezon/react-native-map-shoutem-boiler-plate.git
 ```
 ```
 yarn install
