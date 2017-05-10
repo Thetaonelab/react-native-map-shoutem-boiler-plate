@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {
@@ -25,9 +24,7 @@ class Restaurants extends Component {
     }
 
     componentDidMount() {
-        setTimeout(function () {
-            this.props.dispatch(loadRestaurantData())
-        }.bind(this), 1000);
+        this.props.dispatch(loadRestaurantData())
     }
 
     renderRow(restaurant) {
@@ -59,6 +56,11 @@ class Restaurants extends Component {
             </View>
         );
     }
+}
+
+Restaurants.navigationOptions = {
+    title: "Restaurants",
+    gesturesEnabled: true
 }
 
 var select = (state) => ({

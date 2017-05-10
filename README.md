@@ -1,13 +1,12 @@
 This is a quick starter for react native with useful libraries. It includes templates for following libraries:
 
 - Airbnb react-native-map
-- react-native-router-flux
-- react-redux
-- rdux-thunk
-- shoutem-ui toolkit
-- vector icons
+- React navigation (http://reactnavigation.org)
+- react-redux (http://redux.js.org/docs/introduction/)
+- shoutem-ui toolkit (http://shoutem.github.io/docs/ui-toolkit/introduction)
+- vector icons (https://github.com/oblador/react-native-vector-icons)
 - node/express api server
-- Login with facebook
+- Login with facebook (https://developers.facebook.com/docs/react-native/login)
 
 
 The starter is mainly tested on Android, but it should work fine on ios also (please raise an  issue if you find any problem on ios).
@@ -71,8 +70,4 @@ react-native start
 ![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-45-07-450_com.fanlikeyou.png)
 ![Image of Yaktocat](git-img/Screenshot_2017-04-28-21-23-34-359_com.fanlikeyou.png)
 
-
-## TODO
-
- - Use react-navigation instead of react-native-router-flux 
 

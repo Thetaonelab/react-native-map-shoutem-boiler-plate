@@ -11,9 +11,9 @@ import {
     TouchableOpacity,
     DrawerLayoutAndroid,
     BackAndroid,
-    TouchableHighlight
+    TouchableHighlight,
+    Button
 } from 'react-native';
-import { Actions, Scene, Router } from 'react-native-router-flux';
 import Restaurants from './Restaurants'
 
 const styles = StyleSheet.create({
@@ -22,10 +22,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     container: {
-        flex: 1,
+        flex: 9, 
         justifyContent: 'center',
         alignItems: 'center',
-        height: 200
+    },
+    container2: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     welcome: {
         fontSize: 20,
@@ -87,13 +91,12 @@ class MapGoogle extends Component {
                 return false
             }
         }.bind(this));
-
     }
 
     _onActionSelected(position) {
-        if (position === 0) { // index of 'Settings'
-            Actions.restaurants();
-        }
+        // if (position === 0) { // index of 'Settings'
+        this.props.navigation.navigate('Restaurants')
+        //} 
     }
 
     render() {
@@ -117,7 +120,7 @@ class MapGoogle extends Component {
             >
 
                 <View style={styles.parentContainer}>
-                    <ToolbarAndroid
+                    {/*<ToolbarAndroid
                         title="AwesomeApp"
                         style={styles.toolbar}
                         actions={[{ title: 'Settings', icon: require('../../../img/settings.png'), show: 'always' }]}
@@ -125,9 +128,10 @@ class MapGoogle extends Component {
                         navIcon={require('../../../img/menu.png')}
                         onIconClicked={this._openDrawer}
                         onActionSelected = {this._onActionSelected}>
-                    </ToolbarAndroid>
+                    </ToolbarAndroid>*/}
 
                     <View style={styles.container}>
+
                         <MapView
                             style={styles.map}
                             region={{
@@ -141,6 +145,22 @@ class MapGoogle extends Component {
                             showsScale={true}
                         >
                         </MapView>
+                        <Button
+                            onPress={() => { this._onActionSelected(1) }}
+                            title="Hello"
+                            color="rgba(14,172,142,.5)"
+                            accessibilityLabel="Learn more about this purple button"
+                        />
+
+                    </View>
+                    <View style={styles.container2}>
+                        <Button
+                            style={{ justifyContent: 'flex-start', alignItems: 'flex-start' }}
+                            onPress={() => { this._onActionSelected(1) }}
+                            title="See Restaurants"
+                            color="rgba(22,45,189,1)"
+                            accessibilityLabel="Learn more about this purple button"
+                        />
                     </View>
 
                 </View>
@@ -151,6 +171,11 @@ class MapGoogle extends Component {
 
 }
 
+
+MapGoogle.navigationOptions = {
+    title: "Hi",
+
+}
 export default MapGoogle;
 
 

@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button } from '@shoutem/ui';
-import { Actions, Scene, Router } from 'react-native-router-flux';
 import FacebookLoginButton from '../components/FacebookLoginButton'
 
 const styles = StyleSheet.create({
@@ -25,7 +24,6 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center"
-
     },
     buttonStyle: {
         marginTop: 100,
@@ -35,13 +33,14 @@ const styles = StyleSheet.create({
 })
 
 class Login extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
+        this._onfacebookLoginSuccess = this._onfacebookLoginSuccess.bind(this)
     }
 
-    _onfacebookLoginSuccess(email,birthday,profilePic){
-        console.log('Success fetching data: ' , email,birthday,profilePic);
-        Actions.mapGoogle()
+    _onfacebookLoginSuccess(email, birthday, profilePic) {
+        console.log('Success fetching data: ', email, birthday, profilePic);
+        this.props.navigation.navigate('MapGoogle')
     }
 
     render() {
@@ -55,10 +54,14 @@ class Login extends Component {
                     Find a fan friend near you.
                 </Text>
 
-                <FacebookLoginButton onReceiveData={this._onfacebookLoginSuccess} onFailure={console.log}/>
+                <FacebookLoginButton onReceiveData={this._onfacebookLoginSuccess} onFailure={console.log} />
             </View>
         );
     }
+}
+
+Login.navigationOptions = {
+    header:null
 }
 
 export default Login;
